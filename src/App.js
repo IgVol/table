@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Table from './table.js'
 
 export default class App extends Component {
   render() {
     return (
-      <h1>Hello, world.</h1>
+      <div>
+        <Table></Table>
+      </div>
     );
   }
 }
