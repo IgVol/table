@@ -15,10 +15,6 @@ const sampleData = [
     'age': '21',
     'family': 'Father'
   },
-  {
-    'name': 'asdf',
-    'asdf': 'asdfsadf'
-  }
 ]
 
 export default class Table extends Component {
@@ -50,9 +46,10 @@ export default class Table extends Component {
   }
   getHeaders (data) {
     let headers = []
-    data.forEach(obj => Object.keys(obj).forEach(key => {
-      if (!headers.includes(key)) headers.push(key)
-    }))
+    const includesKey = key => !headers.includes(key)
+    data.forEach(obj => Object.keys(obj)
+      .filter(includesKey)
+      .forEach(key => headers = [...headers, key]))
     headers = headers.map(header => ({
       name: header,
       sorted: 'none'
