@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Table from './table.js'
+import TableWrapper from './table-wrapper'
 
 export default class App extends Component {
+  
   render() {
     return (
       <div>
-        <Table></Table>
+        <TableWrapper />
       </div>
     );
   }
